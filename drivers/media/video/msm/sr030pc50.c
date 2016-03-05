@@ -1005,8 +1005,7 @@ static int sr030pc50_set_preview(void)
                 CAMDRV_DEBUG("[%s : %d]Same setting before and now\n",
                         __func__, __LINE__);
                 sr030pc50_WRITE_LIST(sr030pc50_update_preview_setting);
-                return;
-
+                return 0;
         }
 
         if (mDTP == 1) {
