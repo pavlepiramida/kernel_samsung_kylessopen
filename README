@@ -1,7 +1,13 @@
 This is a what I call FrankenKernel.It is a fork of Codename13's  kernel_samsung_kylessopen updated a bit with commits from 
-KlinkOne's android_kernel_ba2x_2.0-1.It has features like USB OTG (works natively in custom ROMs like OmniROM 4.4), F2FS,
- Bluetooth (BlueZ 5 dependencies backported and Bluedroid must be replaced with BlueZ in the Android build tree, yada yada),
-and more, all working if you compile for cyanogenmod_kyle02_defconfig.I will try to keep this kernel alive and running,
+KlinkOne's android_kernel_ba2x_2.0-1.It has features like USB OTG (works natively in custom ROMs like OmniROM 4.4),F2FS,
+ Bluetooth (BlueZ 5 dependencies backported and Bluedroid must be replaced with BlueZ in the Android build tree),
+and more, all working if you compile for cyanogenmod_kyle02_defconfig.
+
+
+				This kernel is for GT-S756x devices.
+				    (S7560,S7560m and S7562)
+
+I will try to keep this kernel alive and running,
 but to all users and devs,
 please be aware that this is my first venture into "kernel land" so some bugs are bound to show their ugly face.
 If you need anything regarding this kernel and/or anything else feel free to contact me via email (pavlepiramida@gmail.com)
