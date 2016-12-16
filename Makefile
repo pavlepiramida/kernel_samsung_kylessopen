@@ -193,7 +193,8 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= arm
-CROSS_COMPILE	?= /home/pavle/Desktop/Toolchain/arm-eabi-linaro-4.9.3/bin/arm-cortex-linux-gnueabi-
+CROSS_COMPILE	?= /home/pavle/Desktop/Toolchain/toolchain-arm-eabi-4.4.3/bin/arm-eabi-
+
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -351,7 +352,7 @@ CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 CFLAGS_MODULE   =
 AFLAGS_MODULE   =
 LDFLAGS_MODULE  =
-CFLAGS_KERNEL	= -march=armv7-a -mfpu=neon -mcpu=cortex-a5 -mtune=cortex-a5 -ftree-vectorize -ffast-math -fsingle-precision-constant
+CFLAGS_KERNEL	= 
 AFLAGS_KERNEL	=
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
