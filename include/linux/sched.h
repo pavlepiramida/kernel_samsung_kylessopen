@@ -2846,7 +2846,7 @@ static struct GAForensicINFO{
   .sched_entity_struct_sum_exec_runtime=offsetof(struct sched_entity, sum_exec_runtime),
   .sched_entity_struct_prev_sum_exec_runtime=offsetof(struct sched_entity, prev_sum_exec_runtime),
 
-#if defined (CONFIG_SCHEDSTATS) || (CONFIG_TASK_DELAY_ACCT)
+#if defined (CONFIG_SCHEDSTATS) || defined (CONFIG_TASK_DELAY_ACCT)
   .task_struct_struct_sched_info=offsetof(struct task_struct, sched_info),
   .sched_info_struct_pcount=offsetof(struct sched_info, pcount),
   .sched_info_struct_run_delay=offsetof(struct sched_info, run_delay),
