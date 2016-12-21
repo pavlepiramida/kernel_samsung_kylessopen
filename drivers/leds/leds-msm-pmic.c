@@ -27,9 +27,13 @@ static unsigned char n_GPIO_KEY_LED_EN = 80;
 static unsigned char n_GPIO_KEY_LED_EN = 124;
 #endif
 
+static unsigned int bl_led_value = 0;
+
 static void msm_keypad_bl_led_set(struct led_classdev *led_cdev,
         enum led_brightness value)
 {
+		bl_led_value = value;
+
         if (value)
                 gpio_set_value(n_GPIO_KEY_LED_EN, 1);
         else
@@ -70,13 +74,17 @@ static int __devexit msm_pmic_led_remove(struct platform_device *pdev)
 static int msm_pmic_led_suspend(struct platform_device *dev,
                 pm_message_t state)
 {
-        led_classdev_suspend(&msm_kp_bl_led);
+		// Suspend only if led is turned off
+		if (! bl_led_value)
+        	led_classdev_suspend(&msm_kp_bl_led);
         return 0;
 }
 
 static int msm_pmic_led_resume(struct platform_device *dev)
 {
-        led_classdev_resume(&msm_kp_bl_led);
+		// It was suspend when led was turned off. Wake up only in this case.
+		if (! bl_led_value)
+        	led_classdev_resume(&msm_kp_bl_led);
 
         return 0;
 }
