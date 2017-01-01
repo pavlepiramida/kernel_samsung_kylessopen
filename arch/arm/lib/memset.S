@@ -119,5 +119,5 @@ ENTRY(memset)
 	strleb	r1, [ip], #1		@ 1
 	strb	r1, [ip], #1		@ 1
 	add	r2, r2, r3		@ 1 (r2 = r2 - (4 - r3))
-	b	1b
+	b	1b 
 ENDPROC(memset)
