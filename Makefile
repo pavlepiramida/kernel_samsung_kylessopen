@@ -1,6 +1,6 @@
 VERSION = 3
 PATCHLEVEL = 0
-SUBLEVEL = 65
+SUBLEVEL = 66
 EXTRAVERSION =
 NAME = Sneaky Weasel
 
@@ -193,7 +193,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= arm
-CROSS_COMPILE	?=/home/pavle/Desktop/Tool/arm-eabi-4.7-32bit/bin/arm-eabi-
+CROSS_COMPILE	?=/home/pavle/Desktop/Toolchains/toolchain-arm-eabi-4.4.3/bin/arm-eabi-
 
 
 # Architecture as present in compile.h
@@ -350,7 +350,7 @@ CHECK		= sparse
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
 
-OFLAGS	= -O3 -mtune=cortex-a5 -march=armv7-a -mfpu=neon-vfpv4 
+OFLAGS	= -O3 
 
 
 CFLAGS_MODULE   =$(OFLAGS)
