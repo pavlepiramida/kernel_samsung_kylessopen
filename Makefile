@@ -193,6 +193,13 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= arm
+# To use ccache for kernel strictly,add ccache to gcc path,remeber this is only for
+# standalone compile! (?=ccache path/to/TC)
+# For best userexpiriance use googles 4.4.3 gcc like I do,you can grab
+# it from my github
+CROSS_COMPILE	?=~/Desktop/Toolchains/toolchain-arm-eabi-4.4.3/bin/arm-eabi-
+# Theres no need to change TC if you download 4.4.3 TC from my repo strictly TO DESKTOP
+# any other location needs editing here
 
 
 
